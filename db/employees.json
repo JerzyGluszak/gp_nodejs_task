@@ -1,0 +1,17 @@
+[
+    { "id": 1, "name": "Leah", "salary": 3000 },
+    { "id": 2, "name": "Miles", "salary": 2010 },
+    { "id": 3, "name": "Lenard", "salary": 2050 },
+    { "id": 4, "name": "Shanna", "salary": 2090 },
+    { "id": 5, "name": "Wilfred", "salary": 2010 },
+    { "id": 6, "name": "Sammi", "salary": 2090 },
+    { "id": 7, "name": "Essence", "salary": 2940 },
+    { "id": 8, "name": "Rusty", "salary": 2970 },
+    { "id": 9, "name": "Serena", "salary": 5290 },
+    { "id": 10, "name": "Hunter", "salary": 4260 },
+    { "id": 11, "name": "Dakota", "salary": 7200 },
+    { "id": 12, "name": "Bethany", "salary": 4290 },
+    { "id": 13, "name": "Jane", "salary": 5280 },
+    { "id": 14, "name": "Lauressa", "salary": 4230 },
+    { "id": 15, "name": "Evalyn", "salary": 5220 }
+]
