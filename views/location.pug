@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1= title
+  if found
+    each ele in result
+      p Location ID = #{ele.id}
+      p Location Full Name = #{ele.name}
+
