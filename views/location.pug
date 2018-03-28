@@ -3,7 +3,16 @@ extends layout
 block content
   h1= title
   if found
-    each ele in result
-      p Location ID = #{ele.id}
-      p Location Full Name = #{ele.name}
+   each ele in result
+    form(method='POST' action=`/locations/${ele.id}`)
+     input(type='hidden', value='PUT', name='_method')
+     div.form-group
+      label(for='loc_id') ID: 
+      input#loc_id.form-control(type='text', placeholder='Location ID' name='loc_id' value=`${ele.id}`) 
+     div.form-group
+      label(for='loc_name') Name: 
+      input#loc_name.form-control(type='text', placeholder='Location Name' name='loc_name' value=`${ele.name}`)
+     div.location-buttons-edit
+      a(href='/locations') Back
+      button.submit-changes-btn(type='submit') Submit changes
 

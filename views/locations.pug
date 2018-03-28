@@ -15,8 +15,11 @@ block content
   each ele in result
     div.location-higher.div-form-width
      span.location-name-span #{ele.name} [#{ele.id}]
-     form.inline-right(method='POST', action=`/locations/${ele.id}`)
+     div.location-buttons
+      form.inline-right(method='GET', action=`/locations/${ele.id}`)
+        button.edit-btn(type='submit') Edit
+      form.inline-right(method='POST', action=`/locations/${ele.id}`)
         input(type='hidden', value='DELETE', name='_method')
-        button.location-delete-btn(type='submit') Delete
+        button.delete-btn(type='submit') Delete
 
 

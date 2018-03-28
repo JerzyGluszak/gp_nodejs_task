@@ -40,9 +40,24 @@ a {
   bottom: 0;
 }
 
-.location-delete-btn {
+.delete-btn {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+
+.edit-btn {
+  position: absolute;
+  bottom: 0;
+  right: 60px;
+}
+
+.submit-changes-btn {
+  position: absolute;
+  left: 120px;
+}
+
+.location-buttons-edit {
+  margin-top: 15px;
 }
 
