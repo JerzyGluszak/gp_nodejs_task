@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  if found
+   each ele in result
+    form(method='POST' action=`/employees/${ele.id}`)
+     input(type='hidden', value='PUT', name='_method')
+     div.form-group
+      label(for='emp_name') Name: 
+      input#emp_name.form-control(type='text', placeholder='Employee Name' name='emp_name' value=`${ele.name}`) 
+     div.form-group
+      label(for='emp_salary') Salary: 
+      input#emp_salary.form-control(type='number', placeholder='Salary' name='emp_salary' value=`${ele.salary}`)
+     div.location-buttons-edit
+      a(href='/employees') Back
+      button.submit-changes-btn(type='submit') Submit changes

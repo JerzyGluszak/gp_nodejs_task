@@ -3,9 +3,13 @@ var express = require('express');
 var app = express.Router();
 var methodOverride = require('method-override');
 
-/* Handle DELETE/PUT data */
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+/**
+ * Handle DELETE/PUT data.
+ * Catch '_method' value from Form and call indicated method.
+ */
 app.use(methodOverride(function(req, res) {
       if (req.body && typeof req.body === 'object' && '_method' in req.body) {
         var method = req.body._method
@@ -14,7 +18,10 @@ app.use(methodOverride(function(req, res) {
       }
 }));
 
-/* GET locations listing */
+/**
+ * GET locations listing.
+ * Displays list of all Locations for 'address:port/locations' URL.
+ */
 app.get('/', function(req, res, next) {
   var mongodb = require('mongodb').MongoClient;
   mongodb.connect(config.db_url + config.db_port, function(err, client) {
@@ -32,7 +39,10 @@ app.get('/', function(req, res, next) {
   });
 });
 
-/* GET specific location */
+/**
+ * GET specific location.
+ * Displays details of given ID Location.
+ */
 app.get('/:id', function(req, res, next) {
   var mongodb = require('mongodb').MongoClient;
   mongodb.connect(config.db_url + config.db_port, function(error, client) {
@@ -58,7 +68,10 @@ app.get('/:id', function(req, res, next) {
   });
 });
 
-/* POST new location */
+/**
+ * POST new location.
+ * Create new DB entry in 'locations' collection.
+ */
 app.post('/add', function(req, res, next) {
   if (!req.body.loc_id || !req.body.loc_name) return next(new Error('No data provided.'));
   var mongodb = require('mongodb').MongoClient;
@@ -77,7 +90,10 @@ app.post('/add', function(req, res, next) {
   });
 });
 
-/* DELETE location */
+/**
+ * DELETE location.
+ * Delete given ID Location entry from DB.
+ */
 app.delete('/:id', function(req, res, next) {
   if (!req.params.id) return next(new Error('No ID provided.'));
   var mongodb = require('mongodb').MongoClient;
@@ -93,7 +109,10 @@ app.delete('/:id', function(req, res, next) {
   });
 });
 
-/* PUT location */
+/**
+ * PUT location.
+ * Update Location details for given Location ID.
+ */
 app.put('/:id', function(req, res, next) {
   if (!req.body.loc_id || !req.body.loc_name) return next(new Error('No data provided.'));
   if (!req.params.id) return next(new Error('No Location ID passed.'));
