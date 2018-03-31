@@ -2,4 +2,8 @@ extends layout
 
 block content
   h1= title
-  p #{content}
+  p.home-page #{content}
+  ul
+   each ele in links
+    li
+     a.link-higher(href=`${ele.link}`) #{ele.name}

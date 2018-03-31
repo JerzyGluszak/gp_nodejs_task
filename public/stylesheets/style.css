@@ -3,8 +3,13 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+p.home-page {
+  font-size: 20px;
+}
+
 a {
   color: #00B7FF;
+  text-decoration: none;
 }
 
 .location-title {
@@ -15,6 +20,7 @@ a {
   border: 1px solid grey;
   padding: 10px;
   width: 300px;
+  margin-top: 10px;
 }
 
 .location-submit {
@@ -33,6 +39,7 @@ a {
 
 .div-form-width {
   width: 300px;
+  padding: 0 10px 5px 10px;
 }
 
 .location-name-span {
@@ -54,7 +61,7 @@ a {
 
 .submit-changes-btn {
   position: absolute;
-  left: 120px;
+  left: 150px;
 }
 
 .location-buttons-edit {
@@ -63,6 +70,19 @@ a {
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 5px 0;
+}
+
+a.link-higher {
+  font-size: 20px;
 }
 

@@ -1,24 +1,25 @@
 extends layout
 
 block content
+  a.link-higher(href='/') < Back
   div.location-form
-    span New Employee Form
-    form(method='POST' action='/employees/add')
-        div.form-group
-            label(for='emp_name') Name: 
-            input#emp_name.form-control(type='text', placeholder='Employee Name' name='emp_name')
-        div.form-group
-            label(for='emp_salary') Salary: 
-            input#emp_salary.form-control(type='number', placeholder='Salary' name='emp_salary')
-        button.location-submit(type='submit') Add Employee
+   span New Employee Form
+   form(method='POST' action='/employees/add')
+    div.form-group
+     label(for='emp_name') Name: 
+     input#emp_name.form-control(type='text', placeholder='Employee Name' name='emp_name')
+    div.form-group
+     label(for='emp_salary') Salary: 
+     input#emp_salary.form-control(type='number', placeholder='Salary' name='emp_salary')
+    button.location-submit(type='submit') Add Employee
   h1.location-title= title
   each ele in result
-    div.location-higher.div-form-width
-     span.location-name-span #{ele.name} - #{ele.salary}
-     div.location-buttons
-      form.inline-right(method='GET', action=`/employees/${ele.id}`)
-        button.edit-btn(type='submit') Edit
-      form.inline-right(method='POST', action=`/employees/${ele.id}`)
-        input(type='hidden', value='DELETE', name='_method')
-        button.delete-btn(type='submit') Delete
+   div.location-higher.div-form-width
+    span.location-name-span #{ele.name} - #{ele.salary}
+    div.location-buttons
+     form.inline-right(method='GET', action=`/employees/${ele.id}`)
+      button.edit-btn(type='submit') Edit
+     form.inline-right(method='POST', action=`/employees/${ele.id}`)
+      input(type='hidden', value='DELETE', name='_method')
+      button.delete-btn(type='submit') Delete
 
